@@ -2,7 +2,6 @@ body {
     background: url("../assets/pictures/wallpaper-small.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 300px;
     margin: 0 auto;
     
 }
@@ -12,7 +11,8 @@ body {
     flex-direction: column;
     overflow: hidden;
     margin: auto;
-    width: 300px;
+    width: 86vw;
+    min-width: 546px;
 }
 img {
     width: inherit;
@@ -28,19 +28,37 @@ img {
 }
 
 #play-zone {
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
     margin: 0 auto;
     width: 250px;
 }
 #radio-zone {
+    backdrop-filter: blur(5px) brightness(60%);
+    position: relative;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(transparent, rgba(253, 221, 115, 0.329));
+    border: 1px solid black;
+    border-radius: 25px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    padding: 2rem 0;
     text-align: center;
     margin: 0 auto;
-    width: 150px;
-    gap: 4rem;
+    width: 400px;
+}
+
+#radio-zone::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    background-color: transparent;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    filter: blur(1rem);
+
 }
 
 #title {
@@ -52,31 +70,40 @@ img {
 }
 
 .button{
-    padding: 0.1rem 0.1rem;
+
+    padding: 0.25rem 0.6rem 0;
     border-radius: 20px;
     background-color: white;
     border: none;
     color: #A65466;
     margin: 0 1em;
-    box-shadow: 3px 3px 5px 1px rgba(39, 39, 39, 0.486);
-
 }
 .button:hover {
-    background-color: #A65466;
-    color: white;
+    fill: white;
+    background: #F5833C;
 }
 
 .radio-button {
-    padding: auto;
+    padding: 0.2rem 0.6rem;
+    margin: 1rem;
     text-align: center;
-    width: 80px;
-    background: transparent;
-    border: none;
-    height:80px;
-    border-radius: 50%;
+    width: 40px;
+    background: white;
+    border: 10px solid white;
+    height:40px;
+    border-radius: 20px;
 }
+.active {
+    background: rgb(148, 135, 19);
+    border: 10px solid #B34F64;
+}
+
 .radio-button:hover {
-    box-shadow: 0 1px 10px 10px rgb(255, 235, 179);
+    background: rgb(226, 209, 50);
+    border: 10px solid #B34F64;
+}
+
+.radio-picture {
 }
 
 #play-button {
