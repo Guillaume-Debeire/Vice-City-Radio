@@ -1,6 +1,8 @@
-const playButton = document.getElementById('play-button')
+const startButton = document.getElementById('start-button')
 const stopButton = document.getElementById('stop-button')
 const radioZone = document.getElementById('radio-zone')
+
+const message = document.getElementById('message-content')
 
 const tuning = new Audio('../assets/soundFX/tuning.mp3')
 const fever105 = new Audio('../assets/music/fever-105.mp3')
@@ -42,6 +44,7 @@ playMusic = () => {
     vcpr.play();
     kchat.play();
     tuning.play();
+    message.innerHTML = 'FEVER 105'
 }
 
 stopMusic = () => {
@@ -54,6 +57,7 @@ stopMusic = () => {
     wave103.pause();
     vcpr.pause();
     kchat.pause();
+    message.innerHTML = 'STOP'
 }
 
 handlePlay = () => {
@@ -64,6 +68,6 @@ handleStop = () => {
     stopMusic()
 }
 
-playButton.addEventListener('click', handlePlay)
+startButton.addEventListener('click', handlePlay)
 
 stopButton.addEventListener('click', handleStop)

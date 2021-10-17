@@ -12,15 +12,14 @@
     height: 50px;
     width: 20px;
     left: 0;
+    border: 1px solid black;
+    transition: left 0.4s;
     background: rgb(209, 209, 209);
     border-radius: 20px;
     box-shadow: -1px -3px 6px 2px inset grey;
     transform: all 2s;
 }
 
-#play-button:hover {
-    box-shadow: -1px -3px 6px 2px inset rgb(56, 56, 56);
-}
 
 #background {
     position: relative;
@@ -34,6 +33,7 @@
 .radio-picture {
     width: inherit;
     box-sizing: border-box;
+    z-index: 210;
 
 }
 
@@ -41,48 +41,77 @@
     width: 60px;
     position: absolute;
     height: 60px;
-    display: flex;
+    display: flex;   
+    border-radius: 20px;
+    padding: 0.2rem 0.6rem;
+    margin: 1rem;
     justify-content: center;
     align-items: center;
     border: none;
-    background: transparent;
+    background-color: transparent;
+    transition: transform 0.2s;
+    transform: scale(100%);
+}
+
+.flash {
+    position: absolute;
+    width: 10px;
+    height: 60px;
+    left: -25px;
+    z-index: 200;
+    display: inline;
+    transform: rotate(20deg);
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+.radio-button:hover {
+    /* transform: scale(170%); */
+    transition: transform 0.3s;
+}
+.radio-button:hover .flash{
+    width: 0;
+    left: 65px;
+    filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.479);
+    transition: left 0.2s, width 0.2s;
 }
 
 #picture-emotion-98{
-    top: -80px;
-    left: 75px;
+    top: -100px;
+    left: 55px;
 }
 #picture-espantoso{
-    top: 40px;
-    left: 145px;
+    top: 30px;
+    left: 125px;
 }
 #picture-fever-105{
-    top: -80px;
-    left: 215px;
+    top: -100px;
+    left: 195px;
 }
 #picture-flash-fm{
-    top: 40px;
-    left: 295px;
+    top: 30px;
+    left: 275px;
 }
 #picture-k-chat{
-    top: -80px;
-    left: 375px;
+    top: -100px;
+    left: 355px;
 }
 #picture-v-rock{
-    top: 40px;
-    left: 445px;
+    top: 30px;
+    left: 425px;
 }
 #picture-vcpr{
-    top: -80px;
-    left: 525px;
+    top: -100px;
+    left: 505px;
 }
 #picture-wave-103{
-    top: 40px;
-    left: 595px;
+    top: 30px;
+    left: 575px;
 }
 #picture-wildstyle{
-    top: -80px;
-    left: 665px;
+    top: -100px;
+    left: 645px;
 }
 
 .trait-up {

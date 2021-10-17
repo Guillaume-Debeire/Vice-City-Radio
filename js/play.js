@@ -1,4 +1,5 @@
 const scrollBar = document.getElementById('scroll-bar')
+const playButton = document.getElementById('play-button')
 
 const radios = [
     {
@@ -43,7 +44,8 @@ radios.forEach(radio => {
     let radioButton = document.createElement('button');
     radioButton.classList.add('radio-button')
     radioButton.id = 'picture-' + radio.url
-    radioButton.innerHTML = '<img class="radio-picture" src="assets/radio/' + radio.url + '.png" alt="' + radio.name + '">'
+    radioButton.innerHTML = 
+    '<div class="flash"></div><img class="radio-picture" src="assets/radio/' + radio.url + '.png" alt="' + radio.name + '">'
     scrollBar.appendChild(radioButton);
 });
 
@@ -67,73 +69,88 @@ function tuningSound() {
 }
 
 handleFever = () => {
-    let button =document.getElementById('fever-105-button');
-    button.classList += " active";
-    console.log(button.classList)
+    playButton.style.left = "135px"
     muteAll();
     tuningSound();
+    message.innerHTML = 'FEVER 105'
     setTimeout(function(){ fever105.volume = 1 }, 1000)
 }
 
 handleRock = () => {
+    playButton.style.left = "365px"
     muteAll();
     tuningSound();
+    message.innerHTML = 'V-ROCK'
     setTimeout(function(){ vrock.volume = 1 }, 1000)
     
 }
 handleWildstyle = () => {
+    playButton.style.left = "585px"
     muteAll();
     tuningSound();
+    message.innerHTML = 'WILDSTYLE'
     setTimeout(function(){ wildstyle.volume = 1 }, 1000)
     
 }
 handleFlash = () => {
+    playButton.style.left = "215px"
     muteAll();
     tuningSound();
+    message.innerHTML = 'FLASH FM'
     setTimeout(function(){ flashfm.volume = 1 }, 1000)
     
 }
 handleEspantoso = () => {
+    playButton.style.left = "65px"
     muteAll();
     tuningSound();
+    message.innerHTML = 'ESPANTOSO'
     setTimeout(function(){ espantoso.volume = 1 }, 1000)
     
 }
 handleEmotion = () => {
+    playButton.style.left = "-5px"
     muteAll();
     tuningSound();
+    message.innerHTML = 'EMOTION 98'
     setTimeout(function(){ emotion98.volume = 1 }, 1000)
     
 }
 handleWave = () => {
+    playButton.style.left = "515px"
     muteAll();
     tuningSound();
+    message.innerHTML = 'WAVE 103'
     setTimeout(function(){ wave103.volume = 1 }, 1000)
     
 }
 handleVcpr = () => {
+    playButton.style.left = "435px"
     muteAll();
     tuningSound();
+    message.innerHTML = 'VICE CITY PUBLIC RADIO'
     setTimeout(function(){ vcpr.volume = 1 }, 1000)
     
 }
 handleKchat = () => {
+    playButton.style.left = "285px"
     muteAll();
     tuningSound();
+    message.innerHTML = 'K-CHAT'
     setTimeout(function(){ kchat.volume = 1 }, 1000)
     
 }
 
 
-const feverButton = document.getElementById('fever-105-button')
-const rockButton = document.getElementById('v-rock-button')
-const wildstyleButton = document.getElementById('wildstyle-button')
-const flashfmButton = document.getElementById('flash-fm-button')
-const espantosoButton = document.getElementById('espantoso-button')
-const emotionButton = document.getElementById('emotion-98-button')
-const waveButton = document.getElementById('wave-103-button')
-const vcprButton = document.getElementById('vcpr-button')
-const kchatButton = document.getElementById('k-chat-button')
+const feverButton = document.getElementById('picture-fever-105')
+const rockButton = document.getElementById('picture-v-rock')
+const wildstyleButton = document.getElementById('picture-wildstyle')
+const flashfmButton = document.getElementById('picture-flash-fm')
+const espantosoButton = document.getElementById('picture-espantoso')
+const emotionButton = document.getElementById('picture-emotion-98')
+const waveButton = document.getElementById('picture-wave-103')
+const vcprButton = document.getElementById('picture-vcpr')
+const kchatButton = document.getElementById('picture-k-chat')
 
 
 feverButton.addEventListener('click', handleFever)
