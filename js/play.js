@@ -1,3 +1,5 @@
+const scrollBar = document.getElementById('scroll-bar')
+
 const radios = [
     {
         name: "fever105",
@@ -40,9 +42,9 @@ const radios = [
 radios.forEach(radio => {   
     let radioButton = document.createElement('button');
     radioButton.classList.add('radio-button')
-    radioButton.id = radio.url + '-button'
+    radioButton.id = 'picture-' + radio.url
     radioButton.innerHTML = '<img class="radio-picture" src="assets/radio/' + radio.url + '.png" alt="' + radio.name + '">'
-    radioZone.appendChild(radioButton);
+    scrollBar.appendChild(radioButton);
 });
 
 function muteAll() {
