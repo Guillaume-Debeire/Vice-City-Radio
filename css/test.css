@@ -11,12 +11,12 @@
     z-index: 120;
     height: 50px;
     width: 20px;
-    left: 0;
+    left: 135px;
     border: 1px solid black;
     transition: left 0.4s;
-    background: rgb(209, 209, 209);
-    border-radius: 20px;
-    box-shadow: -1px -3px 6px 2px inset grey;
+    background: rgb(134, 89, 37);
+    border-radius: 2px;
+    box-shadow: -1px -3px 6px 2px inset rgb(92, 62, 26);
     transform: all 2s;
 }
 
@@ -33,7 +33,7 @@
 .radio-picture {
     width: inherit;
     box-sizing: border-box;
-    z-index: 210;
+    z-index: 199;
 
 }
 
@@ -53,29 +53,29 @@
     transform: scale(100%);
 }
 
-.flash {
+/* .flash {
     position: absolute;
-    width: 10px;
-    height: 60px;
+    width: 5px;
+    height: 30px;
     left: -25px;
     z-index: 200;
     display: inline;
     transform: rotate(20deg);
     background-color: transparent;
     box-sizing: border-box;
-}
+} */
 
 .radio-button:hover {
-    /* transform: scale(170%); */
+    transform: scale(170%);
     transition: transform 0.3s;
 }
-.radio-button:hover .flash{
+/* .radio-button:hover .flash{
     width: 0;
     left: 65px;
     filter: blur(5px);
     background-color: rgba(255, 255, 255, 0.479);
     transition: left 0.2s, width 0.2s;
-}
+} */
 
 #picture-emotion-98{
     top: -100px;
