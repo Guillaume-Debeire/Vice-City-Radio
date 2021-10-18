@@ -23,6 +23,16 @@ emotion98.load();
 wave103.load();
 vcpr.load();
 kchat.load();
+fever105.loop = true;
+vrock.loop = true;
+wildstyle.loop = true;
+flashfm.loop = true;
+espantoso.loop = true;
+emotion98.loop = true;
+wave103.loop = true;
+vcpr.loop = true;
+kchat.loop = true;
+tuning.loop = true;
 
 playMusic = () => {
     vrock.volume = 0;

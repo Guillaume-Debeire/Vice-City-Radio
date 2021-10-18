@@ -1,5 +1,5 @@
 body {
-    background: url("../assets/pictures/wallpaper-small.jpg");
+    background: url("../assets/pictures/wallpaper-large.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto;
@@ -38,11 +38,14 @@ img {
     width: 300px;
 }
 #radio-zone {
-    backdrop-filter: blur(5px) brightness(10%);
+    backdrop-filter: blur(8px) brightness(180%) drop-shadow(4px 4px 10px blue);
     position: relative;
     padding: 0.5rem 1rem;
-    background: linear-gradient(rgba(253, 221, 115, 0.048), rgba(253, 221, 115, 0.329));
+    background: rgba(255, 255, 255, 0.664);
     border-radius: 25px;
+    border-bottom: 8px solid black;
+    border-left: 4px solid black;
+    border-right: 4px solid black;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -98,7 +101,7 @@ img {
     border-bottom: 2px solid rgba(255, 255, 0, 0.445);
     border-top: 1px solid rgba(255, 255, 0, 0.445);
     background: rgba(0, 0, 0, 0.76);
-    box-shadow: 0 1px 25px 20px rgba(0, 0, 0, 0.493);
+    box-shadow: 0 1px 25px 20px rgba(255, 255, 255, 0.493);
     text-align: center;
     margin: 1rem auto 0;
     color: rgb(1, 255, 1);
@@ -114,4 +117,20 @@ img {
 
 #stop-button {
 
+}
+
+.picture-deco {
+    width: 80px;
+    position: fixed;
+    top: 6rem;
+}
+
+#picture-blonde {
+    left: 30rem;
+}
+
+#picture-black {
+    right: 28rem;
+    top: 6rem;
+    width: 150px;
 }
