@@ -77,7 +77,7 @@ handleFever = () => {
 }
 
 handleRock = () => {
-    playButton.style.left = "365px"
+    playButton.style.left = "360px"
     muteAll();
     tuningSound();
     message.innerHTML = 'V-ROCK'
@@ -93,7 +93,7 @@ handleWildstyle = () => {
     
 }
 handleFlash = () => {
-    playButton.style.left = "215px"
+    playButton.style.left = "210px"
     muteAll();
     tuningSound();
     message.innerHTML = 'FLASH FM'
@@ -101,7 +101,7 @@ handleFlash = () => {
     
 }
 handleEspantoso = () => {
-    playButton.style.left = "65px"
+    playButton.style.left = "61px"
     muteAll();
     tuningSound();
     message.innerHTML = 'ESPANTOSO'
@@ -117,7 +117,7 @@ handleEmotion = () => {
     
 }
 handleWave = () => {
-    playButton.style.left = "515px"
+    playButton.style.left = "510px"
     muteAll();
     tuningSound();
     message.innerHTML = 'WAVE 103'
