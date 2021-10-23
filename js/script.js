@@ -12,8 +12,6 @@ const flashfm = new Audio('../assets/music/flash-fm.mp3')
 const espantoso = new Audio('../assets/music/espantoso.mp3')
 const emotion98 = new Audio('../assets/music/emotion-98.mp3')
 const wave103 = new Audio('../assets/music/wave-103.mp3')
-const vcpr = new Audio('../assets/music/vcpr.mp3')
-const kchat = new Audio('../assets/music/k-chat.mp3')
 fever105.load();
 vrock.load();
 wildstyle.load();
@@ -21,8 +19,6 @@ flashfm.load();
 espantoso.load();
 emotion98.load();
 wave103.load();
-vcpr.load();
-kchat.load();
 fever105.loop = true;
 vrock.loop = true;
 wildstyle.loop = true;
@@ -30,8 +26,6 @@ flashfm.loop = true;
 espantoso.loop = true;
 emotion98.loop = true;
 wave103.loop = true;
-vcpr.loop = true;
-kchat.loop = true;
 tuning.loop = true;
 
 playMusic = () => {
@@ -41,8 +35,6 @@ playMusic = () => {
     espantoso.volume = 0;
     emotion98.volume = 0;
     wave103.volume = 0;
-    vcpr.volume = 0;
-    kchat.volume = 0;
     tuning.volume = 0;
     fever105.play();
     vrock.play();
@@ -51,8 +43,6 @@ playMusic = () => {
     espantoso.play();
     emotion98.play();
     wave103.play();
-    vcpr.play();
-    kchat.play();
     tuning.play();
     message.innerHTML = 'FEVER 105'
 }
@@ -65,8 +55,6 @@ stopMusic = () => {
     espantoso.pause();
     emotion98.pause();
     wave103.pause();
-    vcpr.pause();
-    kchat.pause();
     message.innerHTML = 'STOP'
 }
 

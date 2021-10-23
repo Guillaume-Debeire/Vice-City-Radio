@@ -30,14 +30,6 @@ const radios = [
         name: "wave103",
         url: "wave-103",
     },
-    {
-        name: "vcpr",
-        url: "vcpr",
-    },
-    {
-        name: "kchat",
-        url: "k-chat",
-    },
 ]
 
 radios.forEach(radio => {   
@@ -57,8 +49,6 @@ function muteAll() {
     espantoso.volume = 0;
     emotion98.volume = 0;
     wave103.volume = 0;
-    vcpr.volume = 0;
-    kchat.volume= 0;
 }
 
 function tuningSound() {
@@ -124,22 +114,7 @@ handleWave = () => {
     setTimeout(function(){ wave103.volume = 1 }, 1000)
     
 }
-handleVcpr = () => {
-    playButton.style.left = "435px"
-    muteAll();
-    tuningSound();
-    message.innerHTML = 'VICE CITY PUBLIC RADIO'
-    setTimeout(function(){ vcpr.volume = 1 }, 1000)
-    
-}
-handleKchat = () => {
-    playButton.style.left = "285px"
-    muteAll();
-    tuningSound();
-    message.innerHTML = 'K-CHAT'
-    setTimeout(function(){ kchat.volume = 1 }, 1000)
-    
-}
+
 
 
 const feverButton = document.getElementById('picture-fever-105')
@@ -149,8 +124,6 @@ const flashfmButton = document.getElementById('picture-flash-fm')
 const espantosoButton = document.getElementById('picture-espantoso')
 const emotionButton = document.getElementById('picture-emotion-98')
 const waveButton = document.getElementById('picture-wave-103')
-const vcprButton = document.getElementById('picture-vcpr')
-const kchatButton = document.getElementById('picture-k-chat')
 
 
 feverButton.addEventListener('click', handleFever)
@@ -160,5 +133,3 @@ flashfmButton.addEventListener('click', handleFlash)
 espantosoButton.addEventListener('click', handleEspantoso)
 emotionButton.addEventListener('click', handleEmotion)
 waveButton.addEventListener('click', handleWave)
-vcprButton .addEventListener('click', handleVcpr)
-kchatButton.addEventListener('click', handleKchat)
