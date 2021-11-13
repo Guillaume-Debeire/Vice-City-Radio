@@ -54,6 +54,7 @@
     background-color: transparent;
     transition: transform 0.2s;
     transform: scale(100%);
+    z-index: 200;
 }
 
 /* .flash {
@@ -81,32 +82,32 @@
 } */
 
 #picture-emotion-98{
-    top: -100px;
+    top: -130px;
     left: 55px;
 }
 #picture-espantoso{
-    top: 30px;
-    left: 125px;
+    bottom: -100px;
+    left: 25px;
 }
 #picture-fever-105{
-    top: -100px;
-    left: 195px;
+    top: -130px;
+    left: 165px;
 }
 #picture-flash-fm{
-    top: 30px;
-    left: 275px;
+    bottom: -145px;
+    left: 95px;
 }
 #picture-v-rock{
-    top: 30px;
-    left: 425px;
+    bottom: -115px;
+    left: 180px;
 }
 #picture-wave-103{
-    top: 30px;
-    left: 575px;
+    bottom: -15px;
+    left: -15px;
 }
 #picture-wildstyle{
-    top: -100px;
-    left: 645px;
+    bottom: -15px;
+    right: -15px;
 }
 
 .trait-up {
