@@ -1,4 +1,5 @@
 const startButton = document.getElementById('start-button')
+const loadButton = document.getElementById('load-button')
 const stopButton = document.getElementById('stop-button')
 const radioZone = document.getElementById('radio-zone')
 
@@ -12,6 +13,7 @@ const flashfm = new Audio('../assets/music/flash-fm.mp3')
 const espantoso = new Audio('../assets/music/espantoso.mp3')
 const emotion98 = new Audio('../assets/music/emotion-98.mp3')
 const wave103 = new Audio('../assets/music/wave-103.mp3')
+
 fever105.load();
 vrock.load();
 wildstyle.load();
@@ -28,14 +30,16 @@ emotion98.loop = true;
 wave103.loop = true;
 tuning.loop = true;
 
+
+
 playMusic = () => {
-    vrock.volume = 0;
-    wildstyle.volume = 0;
-    flashfm.volume = 0;
-    espantoso.volume = 0;
-    emotion98.volume = 0;
-    wave103.volume = 0;
-    tuning.volume = 0;
+    vrock.muted = true;
+    wildstyle.muted = true;
+    flashfm.muted = true;
+    espantoso.muted = true;
+    emotion98.muted = true;
+    wave103.muted = true;
+    tuning.muted = true;
     fever105.play();
     vrock.play();
     wildstyle.play();
@@ -55,6 +59,7 @@ stopMusic = () => {
     espantoso.pause();
     emotion98.pause();
     wave103.pause();
+    tuning.pause();
     message.innerHTML = 'STOP'
 }
 
@@ -66,6 +71,11 @@ handleStop = () => {
     stopMusic()
 }
 
+handleLoad = () => {
+    loadMusics()
+}
+
 startButton.addEventListener('click', handlePlay)
+loadButton.addEventListener('click', handleLoad)
 
 stopButton.addEventListener('click', handleStop)

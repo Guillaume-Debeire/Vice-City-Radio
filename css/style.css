@@ -2,9 +2,9 @@ body {
     background: url("../assets/pictures/wallpaper-small.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     height: 100vh;
-    width: 100vw;
+    /* width: 100vw; */
     overflow: hidden;
     
 }
@@ -20,7 +20,7 @@ body {
     flex-direction: column;
     overflow: hidden;
     margin: auto;
-    width: 86vw;
+    width: 346px;
     min-width: 346px;
 }
 img {
@@ -129,6 +129,17 @@ img {
 
 #stop-button {
 
+}
+#load-button {
+    width: 1rem;
+    margin: auto;
+    height: 1.2rem;
+    background-color: red;
+    position: absolute;
+    top: 5rem;
+}
+#load-button:hover {
+    background-color: white;
 }
 
 .picture-deco {

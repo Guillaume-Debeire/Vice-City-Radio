@@ -42,19 +42,21 @@ radios.forEach(radio => {
 });
 
 function muteAll() {
-    fever105.volume = 0;
-    vrock.volume = 0;
-    wildstyle.volume = 0;
-    flashfm.volume = 0;
-    espantoso.volume = 0;
-    emotion98.volume = 0;
-    wave103.volume = 0;
+    fever105.muted = true;
+    vrock.muted = true;
+    wildstyle.muted = true;
+    flashfm.muted = true;
+    espantoso.muted = true;
+    emotion98.muted = true;
+    wave103.muted = true;
 }
 
+
+
 function tuningSound() {
-    tuning.volume = 1;
+    tuning.muted = false;
     setTimeout(function(){ 
-        tuning.volume = 0;
+        tuning.muted = true;
         }, 1000)
 }
 
@@ -63,7 +65,7 @@ handleFever = () => {
     muteAll();
     tuningSound();
     message.innerHTML = 'FEVER 105'
-    setTimeout(function(){ fever105.volume = 1 }, 1000)
+    setTimeout(function(){ fever105.muted = false }, 1000)
 }
 
 handleRock = () => {
@@ -71,7 +73,7 @@ handleRock = () => {
     muteAll();
     tuningSound();
     message.innerHTML = 'V-ROCK'
-    setTimeout(function(){ vrock.volume = 1 }, 1000)
+    setTimeout(function(){ vrock.muted = false }, 1000)
     
 }
 handleWildstyle = () => {
@@ -79,7 +81,7 @@ handleWildstyle = () => {
     muteAll();
     tuningSound();
     message.innerHTML = 'WILDSTYLE'
-    setTimeout(function(){ wildstyle.volume = 1 }, 1000)
+    setTimeout(function(){ wildstyle.muted = false }, 1000)
     
 }
 handleFlash = () => {
@@ -87,7 +89,7 @@ handleFlash = () => {
     muteAll();
     tuningSound();
     message.innerHTML = 'FLASH FM'
-    setTimeout(function(){ flashfm.volume = 1 }, 1000)
+    setTimeout(function(){ flashfm.muted = false }, 1000)
     
 }
 handleEspantoso = () => {
@@ -95,7 +97,7 @@ handleEspantoso = () => {
     muteAll();
     tuningSound();
     message.innerHTML = 'ESPANTOSO'
-    setTimeout(function(){ espantoso.volume = 1 }, 1000)
+    setTimeout(function(){ espantoso.muted = false }, 1000)
     
 }
 handleEmotion = () => {
@@ -103,7 +105,7 @@ handleEmotion = () => {
     muteAll();
     tuningSound();
     message.innerHTML = 'EMOTION 98'
-    setTimeout(function(){ emotion98.volume = 1 }, 1000)
+    setTimeout(function(){ emotion98.muted = false }, 1000)
     
 }
 handleWave = () => {
@@ -111,7 +113,7 @@ handleWave = () => {
     muteAll();
     tuningSound();
     message.innerHTML = 'WAVE 103'
-    setTimeout(function(){ wave103.volume = 1 }, 1000)
+    setTimeout(function(){ wave103.muted = false }, 1000)
     
 }
 
