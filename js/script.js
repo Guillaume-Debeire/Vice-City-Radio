@@ -30,7 +30,21 @@ emotion98.loop = true;
 wave103.loop = true;
 tuning.loop = true;
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
 
+const loadMusics = () => {
+    let randomNumber = getRandomInt(2000);
+    fever105.currentTime = randomNumber;
+    vrock.currentTime = randomNumber;
+    wildstyle.currentTime = randomNumber;
+    flashfm.currentTime = randomNumber;
+    espantoso.currentTime = randomNumber;
+    emotion98.currentTime = randomNumber;
+    wave103.currentTime = randomNumber;
+    tuning.currentTime = randomNumber;
+}
 
 playMusic = () => {
     vrock.muted = true;
