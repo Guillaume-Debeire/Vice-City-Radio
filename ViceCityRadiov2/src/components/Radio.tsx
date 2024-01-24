@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   top: 88px;
   left: 170px;
   border-radius: 10px;
-  background: #5a2d04;
+  background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,5 +25,6 @@ const Wrapper = styled.div`
     width: 100vw;
     height: 200px;
     border-radius: 0;
+    margin-bottom: 80px;
   }
 `;

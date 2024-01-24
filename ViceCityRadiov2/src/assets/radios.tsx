@@ -8,32 +8,32 @@ const wave103 = new Audio("/music/wave-103.mp3");
 export let radios = [
   {
     title: "Fever 105",
-    path: "/vice-city-wallpaper.jpg",
+    path: "/fever105.jpg",
     sound: fever105,
   },
   {
     title: "Wild Style",
-    path: "/vice-city-wallpaper.jpg",
+    path: "/wildstyle.jpg",
     sound: wildstyle,
   },
   {
     title: "Rock Radio",
-    path: "/vice-city-wallpaper.jpg",
+    path: "/rockradio.jpg",
     sound: vrock,
   },
   {
     title: "Flash FM",
-    path: "/vice-city-wallpaper.jpg",
+    path: "/flashfm.jpg",
     sound: flashfm,
   },
   {
     title: "Wave 103",
-    path: "/vice-city-wallpaper.jpg",
+    path: "/wave103.jpg",
     sound: wave103,
   },
   {
     title: "Emotion",
-    path: "/vice-city-wallpaper.jpg",
+    path: "/emotion.jpg",
     sound: emotion98,
   },
 ];

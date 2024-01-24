@@ -6,7 +6,7 @@ export interface ScreenProps {
 }
 export function Screen(props: ScreenProps) {
   const [randomizedTitle, setRandomizedTitle] = useState<string | undefined>(
-    "ABCDE"
+    "ABCDE01234"
   );
   function useRandomizedLetter() {
     const alphabet = [
@@ -18,8 +18,27 @@ export function Screen(props: ScreenProps) {
       "f",
       "g",
       "h",
+      "i",
+      "j",
+      "k",
+      "l",
+      "m",
+      "n",
+      "o",
+      "p",
+      "q",
+      "r",
+      "s",
+      "t",
+      "u",
+      "v",
+      "w",
       "x",
+      "y",
+      "z",
       "0",
+      "2",
+      "3",
       "1",
       "4",
     ];
@@ -32,16 +51,34 @@ export function Screen(props: ScreenProps) {
       useRandomizedLetter() +
       useRandomizedLetter() +
       useRandomizedLetter() +
+      useRandomizedLetter() +
+      useRandomizedLetter() +
+      useRandomizedLetter() +
       useRandomizedLetter();
     setRandomizedTitle(randomTitle);
   }
 
-  // let randomInterval = setInterval(useRandomizedTitle, 2);
+  let nIntervalId: any;
 
-  setTimeout(() => {
-    // clearInterval(randomInterval);
-    setRandomizedTitle(props.title);
-  }, 500);
+  function changeTitle() {
+    if (!nIntervalId) {
+      nIntervalId = setInterval(useRandomizedTitle, 5);
+    }
+  }
+
+  function stopTitleChange() {
+    clearInterval(nIntervalId);
+    // release our intervalID from the variable
+    nIntervalId = null;
+  }
+
+  useEffect(() => {
+    changeTitle();
+    setTimeout(() => {
+      stopTitleChange();
+      setRandomizedTitle(props.title);
+    }, 500);
+  }, [props.title]);
 
   return (
     <Wrapper>
@@ -54,7 +91,8 @@ const Wrapper = styled.div`
   font-family: "Ericsson GA628", sans-serif;
   width: 300px;
   margin: 1rem;
-  background-color: lightgreen;
+  height: 40px;
+  background-color: #3bb63b;
   border-radius: 5px;
   color: rgba(0, 0, 0);
   border: 1px solid black;
@@ -62,9 +100,15 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   padding-left: 6px;
+  order: 2;
+  @media (max-width: 1250px) {
+    order: 1;
+    width: 100%;
+  }
 `;
 
 const Title = styled.div`
-  font-size: 15px;
+  font-size: 30px;
   text-transform: uppercase;
+  margin: 0 auto;
 `;

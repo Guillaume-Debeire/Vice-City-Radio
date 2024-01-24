@@ -29,7 +29,7 @@ export function SoundController() {
     <Wrapper>
       <AnimatePresence>
         <Box sx={{ width: 200 }}>
-          <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
+          <Stack spacing={2} direction="row" alignItems="center">
             {(context?.volume as number) > 50 ? (
               <motion.div
                 initial={{ opacity: 0 }}
@@ -63,5 +63,14 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: center;
   color: black;
+  order: 3;
+
+  .css-1aafxkz-MuiSlider-root {
+    color: #532600;
+  }
+  .css-xost53-MuiSlider-thumb {
+    box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.7);
+  }
 `;

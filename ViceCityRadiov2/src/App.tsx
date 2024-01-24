@@ -17,6 +17,13 @@ export function App() {
   const [volume, setVolume] = useState<number | number[]>(100);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
+  function randomize() {
+    console.log("je randomize");
+    const newTimeValue = Math.floor(Math.random() * 1000);
+    radios.forEach((radio) => {
+      radio.sound.currentTime = newTimeValue;
+    });
+  }
   return (
     <AppContext.Provider
       value={{
@@ -28,39 +35,69 @@ export function App() {
         setIsPlaying,
       }}
     >
-      <Wrapper>
-        <ChannelSelector />
-        <Radio />
-        <RandomizerButton>
+      <Wrapper background={radioSelected.path}>
+        <RandomizerButton onClick={randomize}>
           <RestartAltIcon />
         </RandomizerButton>
+        <ChannelSelector />
+        <RadioWrapper>
+          <Radio />
+        </RadioWrapper>
       </Wrapper>
     </AppContext.Provider>
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ background: string }>`
+  transition: all 0.4s ease-in-out;
   width: 100vw;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: url("vice-city-wallpaper.jpg");
+  background: url(${({ background }) => background});
   background-repeat: no-repeat;
   background-size: cover;
-  @media (max-width: 1250px) {
-    background: url("palmier.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+
   align-items: center;
   justify-content: center;
   gap: 3rem;
+  @media (max-width: 1250px) {
+    gap: 0;
+    background-position: center;
+  }
+`;
+
+const RadioWrapper = styled.div`
+  width: 100%;
+  height: 30vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 3rem;
+  background: linear-gradient(transparent, white);
+  @media (max-width: 1250px) {
+    /* height: 50vh; */
+    padding-bottom: 0;
+    background: linear-gradient(transparent, white 70%);
+  }
 `;
 
 const RandomizerButton = styled.button`
   border: unset;
-  background-color: white;
-  border: 2px solid black;
-  box-shadow: 0 0 9px 4px rgba(0, 0, 0, 0.4);
+  background-color: #fffdda;
+  box-shadow: 0 0 9px 1px rgba(255, 251, 18, 0.4);
   border-radius: 50%;
+  color: black;
+  transition: all 0.3s ease-in-out;
+  margin: 1rem 0;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:focus {
+    outline: unset;
+  }
+  &:active {
+    transform: scale(0.9);
+  }
 `;
