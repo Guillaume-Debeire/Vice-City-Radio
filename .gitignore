@@ -1,1 +1,24 @@
+ViceCityRadiov2/# Logs
+ViceCityRadiov2/logs
+ViceCityRadiov2/*.log
+ViceCityRadiov2/npm-debug.log*
+ViceCityRadiov2/yarn-debug.log*
+ViceCityRadiov2/yarn-error.log*
+ViceCityRadiov2/pnpm-debug.log*
+ViceCityRadiov2/lerna-debug.log*
+
 ViceCityRadiov2/node_modules
+ViceCityRadiov2/dist
+ViceCityRadiov2/dist-ssr
+ViceCityRadiov2/*.local
+
+ViceCityRadiov2/# Editor directories and files
+ViceCityRadiov2/.vscode/*
+ViceCityRadiov2/!.vscode/extensions.json
+ViceCityRadiov2/.idea
+ViceCityRadiov2/.DS_Store
+ViceCityRadiov2/*.suo
+ViceCityRadiov2/*.ntvs*
+ViceCityRadiov2/*.njsproj
+ViceCityRadiov2/*.sln
+ViceCityRadiov2/*.sw?
