@@ -15,11 +15,11 @@ export function RadioSelector() {
 
   function playMusic() {
     radios.forEach((radio) => {
+      radio.sound.play();
       if (radio.title === context?.radioSelected.title) {
         radio.sound.muted = false;
         radio.sound.volume = (context?.volume as number) / 100;
       }
-      radio.sound.play();
       if (context?.isPlaying) {
         radio.sound.pause();
       }
@@ -39,9 +39,10 @@ export function RadioSelector() {
     });
     console.log("loading", loading);
   }, []);
+
   return (
-    <Wrapper>
-      <PlayButton onClick={playMusic}>
+    <Wrapper hidden={context?.hiddenUI}>
+      <PlayButton onClick={playMusic} className="play-button">
         {loading > 0 ? (
           <div>
             {context?.isPlaying ? (
@@ -73,11 +74,11 @@ export function RadioSelector() {
   );
 }
 
-const Wrapper = styled.div`
-  border: 5px solid brown;
+const Wrapper = styled.div<{ hidden?: boolean }>`
+  border: 3px solid rgba(134, 123, 19, 0.4);
   border-radius: 5px;
   background: transparent;
-  width: 80%;
+  /* width: 80%; */
   /* height: 60%; */
   display: flex;
   justify-content: space-between;
@@ -86,8 +87,14 @@ const Wrapper = styled.div`
   flex-direction: row;
   border-radius: 50px;
   box-shadow: 1px 2px 15px 2px rgba(0, 0, 0, 0.4);
-
+  transition: all 0.4s ease-in-out;
   background: url("/marbre.jpg");
+  opacity: ${({ hidden }) => (hidden ? "0" : "1")};
+  &:hover {
+    .sound-controller-wrapper {
+      width: 200px;
+    }
+  }
   @media (max-width: 1250px) {
     flex-wrap: wrap;
     justify-content: center;
@@ -99,14 +106,21 @@ const PlayButton = styled.button`
   order: 1;
   background: white;
   border-radius: 50%;
-  height: 3rem;
-  width: 3rem;
-  color: black;
-  border: 1px solid black;
+
+  color: #ac9308c0;
+
   display: flex;
+  transition: all 0.4s ease-in-out;
   justify-content: center;
   align-content: center;
   align-self: center;
+  &:hover {
+    border: 1px solid transparent;
+    box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.4);
+  }
+  &:active {
+    box-shadow: 1px 2px 8px 2px inset rgba(0, 0, 0, 0.4);
+  }
   &:focus {
     outline: unset;
   }

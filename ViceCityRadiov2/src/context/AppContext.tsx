@@ -13,6 +13,10 @@ export interface IAppContext {
   setVolume: React.Dispatch<React.SetStateAction<number | number[]>>;
   isPlaying: boolean;
   setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
+  hiddenUI: boolean;
+  setHiddenUI: React.Dispatch<React.SetStateAction<boolean>>;
+  stream: MediaStream | null;
+  setStream: React.Dispatch<React.SetStateAction<MediaStream | null>>;
 }
 
 export const AppContext = createContext<IAppContext | undefined>(undefined);

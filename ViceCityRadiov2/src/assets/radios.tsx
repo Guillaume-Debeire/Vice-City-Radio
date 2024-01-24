@@ -12,7 +12,7 @@ export let radios = [
     sound: fever105,
   },
   {
-    title: "Wild Style",
+    title: "Wildstyle",
     path: "/wildstyle.jpg",
     sound: wildstyle,
   },
@@ -27,7 +27,7 @@ export let radios = [
     sound: flashfm,
   },
   {
-    title: "Wave 103",
+    title: "Wave103",
     path: "/wave103.jpg",
     sound: wave103,
   },

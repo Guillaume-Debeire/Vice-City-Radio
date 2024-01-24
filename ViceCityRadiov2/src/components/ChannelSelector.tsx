@@ -31,7 +31,7 @@ export function ChannelSelector() {
       : (tuningSound.muted = true);
   }, []);
   return (
-    <Wrapper>
+    <Wrapper hidden={context?.hiddenUI}>
       {radios.map((radio) => (
         <Button onClick={() => handleSelectRadio(radio)}>
           <Channel title={radio.title} imgSrc={radio.path} key={radio.title} />
@@ -41,7 +41,7 @@ export function ChannelSelector() {
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ hidden?: boolean }>`
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
@@ -51,8 +51,17 @@ const Wrapper = styled.div`
   width: 90%;
   height: 70vh;
   overflow-y: auto;
-  &:hover {
-    & .channel-img {
+  &::-webkit-scrollbar {
+    transition: all 0.4s ease-in-out;
+    width: 5px;
+    height: 8px;
+    background-color: ${({ hidden }) =>
+      hidden ? "transparent" : "#ac9308c0"}; /* or add it to the track */
+  }
+
+  & .channel-img {
+    opacity: ${({ hidden }) => (hidden ? "0" : "1")};
+    @media (max-width: 1250px) {
       opacity: 1;
     }
   }

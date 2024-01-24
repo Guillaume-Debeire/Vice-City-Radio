@@ -26,7 +26,7 @@ export function SoundController() {
   }
 
   return (
-    <Wrapper>
+    <Wrapper className="sound-controller-wrapper">
       <AnimatePresence>
         <Box sx={{ width: 200 }}>
           <Stack spacing={2} direction="row" alignItems="center">
@@ -66,9 +66,11 @@ const Wrapper = styled.div`
   align-self: center;
   color: black;
   order: 3;
+  width: 30px;
+  transition: all 0.4s ease-in-out;
 
   .css-1aafxkz-MuiSlider-root {
-    color: #532600;
+    color: #ac9408;
   }
   .css-xost53-MuiSlider-thumb {
     box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.7);

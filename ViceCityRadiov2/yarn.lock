@@ -1898,6 +1898,13 @@ react-refresh@^0.14.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.14.0.tgz#4e02825378a5f227079554d4284889354e5f553e"
   integrity sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==
 
+react-sound-visualizer@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-sound-visualizer/-/react-sound-visualizer-1.1.1.tgz#c28d89426fac6811310790981d7eee47a91c1bf6"
+  integrity sha512-KlOorFcBT7rL5KZJ+gbijM6HFGuZs/28wuVmUdI57C93EuSvIgZJj0NHMRZ3AEJK9wnQQPwx/TR/RRX0gNriuA==
+  dependencies:
+    sound-visualizer "^1.2.0"
+
 react-transition-group@^4.4.5:
   version "4.4.5"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-4.4.5.tgz#e53d4e3f3344da8521489fbef8f2581d42becdd1"
@@ -2013,6 +2020,11 @@ slash@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
+
+sound-visualizer@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/sound-visualizer/-/sound-visualizer-1.2.0.tgz#1b67ac4266a4a38d7c073928d41aafaed298a25d"
+  integrity sha512-+pfeIBHtxAa06I4LhlYdZCuSVEArrJ0OZ4dBHNdy4jN6XnZflEaBCjDmf0xbBcxvrzURw4iL2We3/MdHGn6UPg==
 
 source-map-js@^1.0.2:
   version "1.0.2"
