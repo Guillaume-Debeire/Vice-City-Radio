@@ -1,22 +1,29 @@
 import styled from "styled-components";
-import { Screen } from "./Screen";
 import { RadioSelector } from "./RadioSelector";
 
 export function Radio() {
   return (
     <Wrapper>
-      <Screen />
       <RadioSelector />
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
-  top: 0;
-  margin: 0 auto;
-  height: 100%;
-  width: 86%;
-  background-color: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(10px);
-  box-shadow: 2px 2px 24px 10px rgba(0, 0, 0, 0.2);
+  width: 50%;
+  height: 100px;
+  top: 88px;
+  left: 170px;
+  border-radius: 10px;
+  background: #5a2d04;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  @media (max-width: 1250px) {
+    width: 100vw;
+    height: 200px;
+    border-radius: 0;
+  }
 `;
