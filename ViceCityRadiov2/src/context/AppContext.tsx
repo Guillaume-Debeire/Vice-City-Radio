@@ -13,8 +13,8 @@ export interface IAppContext {
   setVolume: React.Dispatch<React.SetStateAction<number | number[]>>;
   isPlaying: boolean;
   setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
-  hiddenUI: boolean;
-  setHiddenUI: React.Dispatch<React.SetStateAction<boolean>>;
+  hiddenUI: boolean | undefined;
+  setHiddenUI: React.Dispatch<React.SetStateAction<boolean | undefined>>;
   stream: MediaStream | null;
   setStream: React.Dispatch<React.SetStateAction<MediaStream | null>>;
 }

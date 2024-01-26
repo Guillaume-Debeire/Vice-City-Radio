@@ -32,9 +32,9 @@ export function ChannelSelector() {
   }, []);
   return (
     <Wrapper hidden={context?.hiddenUI}>
-      {radios.map((radio) => (
-        <Button onClick={() => handleSelectRadio(radio)}>
-          <Channel title={radio.title} imgSrc={radio.path} key={radio.title} />
+      {radios.map((radio, key) => (
+        <Button onClick={() => handleSelectRadio(radio)} key={key}>
+          <Channel title={radio.title} imgSrc={radio.path} key={key} />
         </Button>
       ))}
     </Wrapper>

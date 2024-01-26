@@ -37,7 +37,6 @@ export function RadioSelector() {
         setLoading(loading + 1);
       });
     });
-    console.log("loading", loading);
   }, []);
 
   return (
@@ -95,7 +94,9 @@ const Wrapper = styled.div<{ hidden?: boolean }>`
       width: 200px;
     }
   }
+
   @media (max-width: 1250px) {
+    opacity: 1;
     flex-wrap: wrap;
     justify-content: center;
     padding-bottom: 20px;
@@ -114,9 +115,13 @@ const PlayButton = styled.button`
   justify-content: center;
   align-content: center;
   align-self: center;
+  position: relative;
+  bottom: 0px;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
   &:hover {
     border: 1px solid transparent;
-    box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.4);
+    bottom: 5px;
+    box-shadow: 1px 5px 8px 2px rgba(0, 0, 0, 0.4);
   }
   &:active {
     box-shadow: 1px 2px 8px 2px inset rgba(0, 0, 0, 0.4);

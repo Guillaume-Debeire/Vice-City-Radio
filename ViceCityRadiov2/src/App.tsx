@@ -9,6 +9,7 @@ import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import { AppContext, IRadio } from "./context/AppContext";
 import { useEffect, useState } from "react";
 import { radios } from "./assets/radios";
+import AudioVisualizer from "./components/AudioVisualizer";
 
 export function App() {
   const initialRadio = radios.filter((radio) => radio.title === "Fever 105");
@@ -17,24 +18,29 @@ export function App() {
   const [radioSelected, setRadioSelected] = useState<IRadio>(initialRadio[0]);
   const [volume, setVolume] = useState<number | number[]>(100);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [hiddenUI, setHiddenUI] = useState<boolean>(false);
+  const [hiddenUI, setHiddenUI] = useState<boolean | undefined>(false);
 
   function randomize() {
-    console.log("je randomize");
     const newTimeValue = Math.floor(Math.random() * 1000);
     radios.forEach((radio) => {
       radio.sound.currentTime = newTimeValue;
     });
   }
 
-  let timeout: number;
   document.onmousemove = function () {
     setHiddenUI(false);
-    clearTimeout(timeout);
-    timeout = setTimeout(function () {
-      setHiddenUI(true);
-    }, 2500);
   };
+  document.onmousedown = function () {
+    setHiddenUI(false);
+  };
+
+  useEffect(() => {
+    if (!hiddenUI) {
+      setTimeout(() => {
+        setHiddenUI(true);
+      }, 2000);
+    }
+  }, [hiddenUI]);
 
   return (
     <AppContext.Provider
@@ -52,13 +58,23 @@ export function App() {
       }}
     >
       <Wrapper background={radioSelected.path}>
-        <RandomizerButton onClick={randomize} hiddens={hiddenUI}>
+        <RandomizerButton onClick={randomize}>
           <RestartAltIcon />
         </RandomizerButton>
         <ChannelSelector />
         <RadioWrapper>
           <Radio />
         </RadioWrapper>
+
+        {radios.map((radio, key) => (
+          <AudioVisualizerWrapper key={key}>
+            <AudioVisualizer
+              color={radio.color}
+              audioElement={radio.sound}
+              key={key}
+            />
+          </AudioVisualizerWrapper>
+        ))}
       </Wrapper>
     </AppContext.Provider>
   );
@@ -101,23 +117,31 @@ const RadioWrapper = styled.div`
   }
 `;
 
-const RandomizerButton = styled.button<{ hiddens?: boolean }>`
-  border: unset;
-  background-color: #fffdda;
-  box-shadow: 0 0 9px 1px rgba(255, 251, 18, 0.4);
+const AudioVisualizerWrapper = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+`;
+
+const RandomizerButton = styled.button`
+  background: white;
   border-radius: 50%;
-  width: 50px;
-  color: black;
-  transition: all 0.3s ease-in-out;
-  margin: 1rem 0;
-  opacity: ${({ hidden }) => (hidden ? "0.1" : "1")};
+
+  color: #ac9308c0;
+  display: flex;
+  transition: all 0.4s ease-in-out;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  margin-top: 1rem;
   &:hover {
-    transform: scale(1.1);
+    border: 1px solid transparent;
+    box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.4);
+  }
+  &:active {
+    box-shadow: 1px 2px 8px 2px inset rgba(0, 0, 0, 0.4);
   }
   &:focus {
     outline: unset;
-  }
-  &:active {
-    transform: scale(0.9);
   }
 `;
