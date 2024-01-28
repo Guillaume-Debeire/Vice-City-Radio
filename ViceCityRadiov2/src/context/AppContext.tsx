@@ -4,6 +4,9 @@ export interface IRadio {
   title: string;
   path: string;
   sound: HTMLAudioElement;
+  color: string;
+  background: string;
+  secondColor: string;
 }
 
 export interface IAppContext {

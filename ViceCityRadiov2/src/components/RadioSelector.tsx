@@ -15,13 +15,15 @@ export function RadioSelector() {
 
   function playMusic() {
     radios.forEach((radio) => {
-      radio.sound.play();
-      if (radio.title === context?.radioSelected.title) {
-        radio.sound.muted = false;
-        radio.sound.volume = (context?.volume as number) / 100;
-      }
+      radio.sound.muted = true;
       if (context?.isPlaying) {
         radio.sound.pause();
+      } else {
+        radio.sound.play();
+        if (radio.title === context?.radioSelected.title) {
+          radio.sound.muted = false;
+          radio.sound.volume = (context?.volume as number) / 100;
+        }
       }
     });
 

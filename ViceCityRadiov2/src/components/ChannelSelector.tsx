@@ -12,8 +12,8 @@ export function ChannelSelector() {
   const tuningSound = new Audio("/soundFX/tuning.mp3");
 
   function handleSelectRadio(radio: IRadio) {
-    context?.setRadioSelected(radio);
     radios.forEach((radio) => (radio.sound.muted = true));
+    context?.setRadioSelected(radio);
     tuningSound.play();
     setTimeout(() => {
       tuningSound.pause();
