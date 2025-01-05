@@ -12,9 +12,9 @@ export function ChannelSelector() {
   const tuningSound = new Audio("/soundFX/tuning.mp3");
 
   function handleSelectRadio(radio: IRadio) {
-    radios.forEach((radio) => (radio.sound.muted = true));
     context?.setRadioSelected(radio);
     tuningSound.play();
+    radios.forEach((radio) => (radio.sound.muted = true));
     setTimeout(() => {
       tuningSound.pause();
       if (context?.volume) radio.sound.muted = false;
@@ -26,10 +26,8 @@ export function ChannelSelector() {
     tuningSound.load();
     tuningSound.loop = true;
     tuningSound.volume = 1;
-    context?.isPlaying === true
-      ? (tuningSound.muted = false)
-      : (tuningSound.muted = true);
   }, []);
+
   return (
     <Wrapper hidden={context?.hiddenUI}>
       {radios.map((radio, key) => (

@@ -12,6 +12,7 @@ import { radios } from "./assets/radios";
 import AudioVisualizer from "./components/AudioVisualizer";
 import { AnimatePresence, motion } from "framer-motion";
 
+const DAY_DURATION: number = 200;
 export function App() {
   const initialRadio = radios.filter((radio) => radio.title === "Fever 105");
   const [stream, setStream] = useState<MediaStream | null>(null);
@@ -169,7 +170,7 @@ const Wrapper = styled.div<{ background: string }>`
   background: #83e6ff;
   align-items: center;
   justify-content: center;
-  animation: 30s ease-in-out 0s infinite alternate sky;
+  animation: ${DAY_DURATION / 2}s ease-in-out 0s infinite alternate sky;
   animation-delay: 4s;
   @keyframes sky {
     from {
@@ -193,6 +194,24 @@ const RadioCharacter = styled(motion.img)`
   left: 00rem;
   bottom: 0;
   z-index: 8;
+  animation: 30s ease-in-out 0s infinite alternate character;
+  z-index: 10;
+  pointer-events: none;
+  @keyframes character {
+    from {
+      /* pushes the sun down past the viewport */
+      transform: translate(0) scale(1);
+    }
+    to {
+      /* returns the sun to its default position */
+      transform: translate(30vw) scale(1.4);
+    }
+  }
+  @media (max-width: 1250px) {
+    gap: 0;
+    z-index: 4;
+    background-position: center;
+  }
 `;
 
 const Chopper = styled(motion.img)`
@@ -201,6 +220,7 @@ const Chopper = styled(motion.img)`
   top: 10rem;
   right: 5rem;
   z-index: 4;
+  display: none;
   animation: 30s ease-in-out 0s infinite alternate chopper;
   @keyframes chopper {
     from {
@@ -223,7 +243,7 @@ const Sun = styled.div`
   top: 0;
   transition: all 0.2s ease-in-out;
   right: 0;
-  animation: 60s linear 0s infinite sun-rise;
+  animation: ${DAY_DURATION}s linear 0s infinite sun-rise;
   z-index: 2;
   @keyframes sun-rise {
     from {
@@ -247,8 +267,8 @@ const Moon = styled.div`
   top: -10rem;
   right: -10rem;
   z-index: 2;
-  box-shadow: 0 0 100px 20px rgba(0, 0, 0, 0.712);
-  animation: 60s linear 0s infinite moon-rise;
+  box-shadow: 0 0 80px 10px rgba(255, 255, 255, 0.712);
+  animation: ${DAY_DURATION}s linear 0s infinite moon-rise;
   z-index: 3;
   @keyframes moon-rise {
     from {
@@ -266,8 +286,8 @@ const Cloud1 = styled(motion.img)`
   position: absolute;
   top: 0;
   left: 0;
-  width: 300px;
-  animation: 30s ease-in-out 0s infinite cloud1-rise;
+  width: 400px;
+  animation: 30s ease-in-out 0s alternate infinite cloud1-rise;
   z-index: 3;
   @keyframes cloud1-rise {
     from {
@@ -284,7 +304,7 @@ const Cloud2 = styled(motion.img)`
   position: absolute;
   top: 0;
   right: 30rem;
-  width: 700px;
+  width: 400px;
   animation: 60s ease-in-out 0s infinite alternate cloud2-rise;
   z-index: 3;
   @keyframes cloud2-rise {
@@ -321,16 +341,33 @@ const City = styled.img`
   width: 100vw;
   position: absolute;
   left: 0;
-  top: 15rem;
+  top: 18rem;
   z-index: 3;
+  @media (max-width: 1250px) {
+    display: none;
+  }
 `;
 
 const Sea = styled.img`
-  width: 100vw;
+  width: 150vw;
   position: absolute;
-  left: 0;
-  bottom: -5rem;
+  right: 0;
+  top: -15rem;
   z-index: 2;
+  animation: 30s ease-in-out 0s infinite alternate sea-move;
+  @keyframes sea-move {
+    from {
+      /* pushes the sun down past the viewport */
+      transform: translate(30vw);
+    }
+    to {
+      /* returns the sun to its default position */
+      transform: translate(20vw);
+    }
+  }
+  @media (max-width: 1250px) {
+    display: none;
+  }
 `;
 
 const RadioWrapper = styled.div`
@@ -352,10 +389,9 @@ const RadioWrapper = styled.div`
 
 const AudioVisualizerWrapper = styled.div`
   position: absolute;
-  top: 0;
-  transform: rotate(180deg);
+  bottom: 0;
   left: 0;
-  z-index: 3;
+  z-index: 4;
 `;
 
 const RandomizerButton = styled.button`

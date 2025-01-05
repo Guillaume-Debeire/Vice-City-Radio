@@ -5,7 +5,7 @@ const flashfm = new Audio("/music/flash-fm.mp3");
 const emotion98 = new Audio("/music/emotion-98.mp3");
 const wave103 = new Audio("/music/wave-103.mp3");
 
-export let radios = [
+export const radios = [
   {
     title: "Fever 105",
     path: "/fever105.jpg",

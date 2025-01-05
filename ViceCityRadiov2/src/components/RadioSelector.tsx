@@ -100,8 +100,10 @@ const Wrapper = styled.div<{ hidden?: boolean }>`
   @media (max-width: 1250px) {
     opacity: 1;
     flex-wrap: wrap;
+    width: 100vw;
     justify-content: center;
     padding-bottom: 20px;
+    border-radius: 0;
   }
 `;
 
